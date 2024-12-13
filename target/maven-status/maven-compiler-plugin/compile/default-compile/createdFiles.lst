@@ -1,0 +1,8 @@
+com\usermanagement\repository\UserManagementRepository.class
+com\usermanagement\UserManagementApplication.class
+com\usermanagement\dto\UserManagementDTO.class
+com\usermanagement\repository\User.class
+com\usermanagement\service\impl\UserManagementServiceImpl.class
+com\usermanagement\UserManagementConfig.class
+com\usermanagement\controller\UserManagementController.class
+com\usermanagement\service\UserManagementService.class
