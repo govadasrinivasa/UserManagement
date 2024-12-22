@@ -1,58 +1,37 @@
 package com.usermanagement.dto;
 
-import jakarta.persistence.Column;
+import java.util.List;
 
 public class UserManagementDTO {
 
-    private Long userId;
-	private String firstName;
-	private String lastName;
-	private String place;
-	private String gender;
-	private String userName;
-	private String password;
+	private long id;
+	private String name;
+	private String mobile;
 	
-	public Long getUserId() {
-		return userId;
+	private List<TicketDTO> tickets;
+	public long getId() {
+		return id;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setId(long id) {
+		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getMobile() {
+		return mobile;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
-	public String getPlace() {
-		return place;
+	public List<TicketDTO> getTickets() {
+		return tickets;
 	}
-	public void setPlace(String place) {
-		this.place = place;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setTickets(List<TicketDTO> tickets) {
+		this.tickets = tickets;
 	}
 	
 }

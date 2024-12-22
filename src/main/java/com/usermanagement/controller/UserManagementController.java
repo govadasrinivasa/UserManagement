@@ -1,6 +1,7 @@
 package com.usermanagement.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,14 +19,15 @@ public class UserManagementController {
 	@Autowired
 	UserManagementServiceImpl userManagementService;
 	
-	@PostMapping("/register")
-	public void register(@RequestBody UserManagementDTO userManagementDTO) {
-		userManagementService.register(userManagementDTO);
-	}
-	
-	@GetMapping("login/{id}")
-	public UserManagementDTO login(@PathVariable("username") String username, @PathVariable("password") String password) {
-		UserManagementDTO userManagementDTO = userManagementService.login(username, password);
-		return userManagementDTO;
-	}
+		@PostMapping("add")
+		public ResponseEntity<UserManagementDTO> addUser(@RequestBody UserManagementDTO userDto) {
+
+			return ResponseEntity.ok(userManagementService.addUser(userDto));
+		}
+
+		@GetMapping("{id}")
+		public ResponseEntity<UserManagementDTO> getUser(@PathVariable(name = "id") long id) {
+
+			return ResponseEntity.ok(userManagementService.getUser(id));
+		}
 }

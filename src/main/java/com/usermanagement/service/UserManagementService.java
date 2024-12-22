@@ -4,6 +4,7 @@ import com.usermanagement.dto.UserManagementDTO;
 
 public interface UserManagementService {
 
-	void register(UserManagementDTO userManagementDTO);
-	UserManagementDTO login(String username, String password);
+	UserManagementDTO addUser(UserManagementDTO userManagementDTO);
+
+	UserManagementDTO getUser(long id);
 }

@@ -1,15 +1,16 @@
 package com.usermanagement.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.usermanagement.entity.Users;
+import com.usermanagement.entity.User;
 
 @Repository
-public interface UserManagementRepository extends JpaRepository<Users, Long> {
+public interface UserManagementRepository extends JpaRepository<User, Long> {
 
-	@Query("select u from user u where u.username like '%username%' and u.password like '%password%'")
-    Users findUserByUsername(@Param("username") String username, @Param("password") String password);
+	boolean existsByMobile(String mobile);
+    
+//    Optional<User> findByUsername(String username);
 }
